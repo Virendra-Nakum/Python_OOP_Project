@@ -45,6 +45,11 @@ class Developer(Employee):
     def display(self):
         super().display()
         print(self.programming_language)
+
+print(f"is manger class is Sub class of Employee{issubclass(Manager,Employee)}")
+print(f"is manger class is Sub class of Employee{issubclass(Developer,Employee)}")
+
+
 person = None
 employee = None
 manager = None
