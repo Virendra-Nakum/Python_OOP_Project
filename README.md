@@ -76,9 +76,9 @@ super().__init__(employee_id, name, age, salary)
 ```text
 Employee-Management-System/
 │
+├── README.md
 ├── main.py
-├── output.png
-└── README.md
+└── output.png
 ```
 
 ## How to Run
