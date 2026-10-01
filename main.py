@@ -2,6 +2,7 @@ print("--- Python OOP Project: Employee Management System ---")
 print()
 
 class Employee :
+
     def __init__(self,employee_id= None,name= None,age = None,salary = None):
         self.__employee_id = employee_id
         self.name = name 
@@ -27,9 +28,14 @@ class Employee :
         print(f"Employee ID is {self.__employee_id}")
         print(f"Employee salary : {self.__salary}")
 
+    def __del__(self):
+        pass
+
 class Manager(Employee):
+
     def __init__(self, employee_id, name, age, salary,department):
         super().__init__(employee_id, name, age, salary)
+        
         self.department = department
 
     def display(self):
@@ -40,24 +46,25 @@ class Developer(Employee):
 
     def __init__(self, employee_id, name, age, salary,programming_language):
         super().__init__(employee_id, name, age, salary)
+        
         self.programming_language = programming_language
 
     def display(self):
         super().display()
         print(self.programming_language)
 
-print(f"is manger class is Sub class of Employee{issubclass(Manager,Employee)}")
-print(f"is manger class is Sub class of Employee{issubclass(Developer,Employee)}")
+print(f"is Manager class is Sub class of Employee Class {issubclass(Manager,Employee)}")
+print(f"is Developer class is Sub class of Employee Class {issubclass(Developer,Employee)}")
 
 
 person = None
 employee = None
 manager = None
+
 while True :
     print("--- Choice another opration ---")
     print()
     print("Choice An Operation")
-    print()
     print("1. Create a Person ")
     print("2. Create an Employee ")
     print("3. Create a Manager ")
@@ -71,7 +78,7 @@ while True :
         age = int(input("Enter Age : "))
 
         person = Employee(name=name,age= age)
-        print(f"person Created with name: {name} and Age :{age}.")
+        print(f"person Created with name :- {name} and Age :- {age}.")
 
     elif choice == 2 :
         name = input("Enter Name: ")
@@ -80,7 +87,7 @@ while True :
         salary = int(input("Enter Salary: "))
 
         employee = Employee(name,age,id,salary)
-        print(f"Employee  created with name: {name},age: {age},ID: {id},salary: ${salary}.")
+        print(f"Employee  created with name:- {name} ,age:- {age} ,ID:- {id} ,salary:- ${salary}.")
 
     elif choice == 3 :
         name = input("Enter Name :")
@@ -90,15 +97,15 @@ while True :
         dept = input("Enter Department: ")
 
         manager = Manager(name,age,id,salary,dept)
-        print(f"Employee  created with name: {name},age: {age},ID: {id},salary: ${salary}, and  department: {dept}.")
+        print(f"Manger created with name:- {name},age:- {age},ID:- {id},salary:- ${salary}, and  department:- {dept}.")
 
 
     elif choice == 4 :
         print("Choose Details To Show: ")
         print()
-        print("1. Person")
-        print("2. Employee")
-        print("3. Manager")
+        print("1. Show Person")
+        print("2. Show Employee")
+        print("3. Show Manager")
         print()
         ch = int(input("Enter Choice :-"))
         if ch == 1 :
